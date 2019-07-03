@@ -1,0 +1,24 @@
+{
+  "name": "show",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Bukovski"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/Bukovski/aggoUnited-template",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "draft/_libs",
+    "test",
+    "tests",
+    "draft/_libs/"
+  ],
+  "dependencies": {
+    "css-hamburgers": "^1.1.3",
+    "jquery": "^3.4.1",
+    "normalize.css": "^8.0.1"
+  }
+}

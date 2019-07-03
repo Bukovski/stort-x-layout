@@ -1,0 +1,5 @@
+.idea
+node_modules
+helpers
+draft/_libs/*
+help-nottes.txt
