@@ -19,6 +19,9 @@
   "dependencies": {
     "css-hamburgers": "^1.1.3",
     "jquery": "^3.4.1",
-    "normalize.css": "^8.0.1"
+    "normalize.css": "^8.0.1",
+    "slick-carousel": "slick.js#^1.8.1",
+    "animate.css": "^3.7.2",
+    "wow": "wowjs#^1.1.2"
   }
 }

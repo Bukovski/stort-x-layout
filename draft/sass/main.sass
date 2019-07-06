@@ -1,5 +1,7 @@
 @import "libs"
+@import "animate"
 @import "vars"
+@import "_mixins/get-vw"
 
 
 *::-webkit-input-placeholder
@@ -43,10 +45,337 @@ body
 	height: auto
 	
 /*------------------ MY STYLE -----------------
-	PRODUCTS
-	INFORMATION COMPANY
-	SOCIAL
+	HEADER
+	SLIDER
 	FOOTER */
+
+.container
+	display: flex
+	flex-direction: column
+	
+	height: 100%
+	max-width: $innerGrid
+	width: 100%
+	margin: 0 auto
+	
+	
+.btn
+	display: inline-block
+	margin-left: 15px
+	padding: 13px 35px
+	font: 400 20px $default-font
+	border: 1px solid $black
+	text-decoration: none
+	text-align: center
+	background-image: linear-gradient(to left,transparent,transparent 50%,$orangeDark 50%,$orangeDark)
+	background-position: -100% 0
+	background-size: 200% 100%
+	transform: skew(-35deg)
+	color: $black
+	cursor: pointer
+	transition: all .3s ease-in
+	
+	&:hover
+		background-position: 0 0
+		color: $white
+	
+	&__text
+		display: inline-block
+		transform: skew(35deg)
+	
+	&--yellow
+		border: 1px solid $yellowLight
+		color: $green
+		
+	
+.wrap-head
+	background: $blackLight
+
+/*------------------ HEADER -----------------*/
+
+.header
+	width: 100%
+	padding-top: 15px
+	padding-bottom: 25px
+	border-bottom: 2px dashed $yellowDark
+	background: $blackLight
+	
+	&__wrap
+		display: flex
+		flex-direction: row
+		align-items: baseline
+		justify-content: space-between
+	
+	&__logo-link
+		margin-left: 48px
+		margin-right: 10px
+	
+	&__logo-img
+		@extend %img-responsive
+	
+	&__menu
+		display: flex
+	
+	&__list
+		display: flex
+		justify-content: space-between
+		
+		width: 100%
+		margin: 0
+		margin-right: 10px
+		padding: 0
+		list-style-type: none
+	
+	&__item
+		display: flex
+		align-items: center
+		
+		margin: 0 6px
+		
+		& + li:before
+			content: "|"
+			margin: 0 12px 0 0
+			color: $orangeDark
+	
+	&__link,
+	&__button
+		display: block
+		padding: 16px 2px
+		border-top: 2px solid transparent
+		font-size: 17px
+		font-weight: 400
+		text-transform: uppercase
+		text-decoration: none
+		white-space: nowrap
+		color: $white
+		transition: transform .25s
+		
+		&:hover,
+		.header__item--active &
+			color: $green
+			
+	&__button
+		display: inline-block
+		padding-right: 19px
+		padding-left: 12px
+
+/*------------------ SLIDER -----------------*/
+.slider
+	margin-top: 82px
+	margin-bottom: 30px
+	
+	&__item
+		outline: none
+		
+	&__wrap
+		display: flex
+		
+	&__content
+		flex: 0 1 443px
+		
+		padding-left: 3px
+		
+	&__title
+		margin-bottom: 35px
+		font-size: 65px
+		font-weight: 400
+		font-style: italic
+		text-transform: uppercase
+		line-height: 57px
+		letter-spacing: -3.15px
+		color: $white
+	
+	&__text
+		margin-bottom: 45px
+		font-size: 16px
+		font-weight: 400
+		line-height: 20px
+		color: $white
+		
+	&__image-wrap
+		display: flex
+		align-items: center
+		justify-content: center
+		flex: 1 2 auto
+		
+	&__image
+		opacity: 0
+		transform: translate3d(100%, 0, 0)
+		
+		@extend %img-responsive
+		
+
+/*------------------ SLIDER DOTS -----------------*/
+.slick-dots
+	display: block
+	width: 100%
+	padding: 0
+	margin: 0
+	margin-top: 7%
+	list-style: none
+	text-align: center
+	
+.slick-dots li
+	display: inline-block
+	width: 20px
+	height: 20px
+	margin: 0 5px
+	padding: 0
+	cursor: pointer
+	
+.slick-dots li button
+	display: inline-block
+	padding: 5px 7px
+	border: 1px solid $orangeDark
+	background: $orangeDark
+	font-size: 0
+	line-height: 0
+	color: transparent
+	cursor: pointer
+	outline: none
+	transform: skew(-35deg)
+	transition: all .3s ease-in
+	
+.slick-dots li.slick-active	button
+	background: $white
+
+/*------------------ SLIDER ANIMATE -----------------*/
+.slick-active
+	& .slider__image
+		animation-name: fadeInRight
+		animation-duration: 1s
+		animation-delay: .3s
+		animation-fill-mode: both
+		
+	& .slider__title
+		animation-name: slideInDown
+		animation-duration: .75s
+		animation-fill-mode: both
+
+	& .btn
+		animation-name: slideInRightBtn
+		animation-duration: 1s
+		animation-delay: .2s
+		animation-fill-mode: both
+
+//Исправить двойной старт у слайдера при переходе с последнего на первый слайд
+
+/*------------------ ARTICLE -----------------*/
+.article
+	margin-top: 98px
+	
+	&__wrap
+		display: flex
+		justify-content: space-between
+		flex-wrap: wrap
+		
+	&__item
+		display: flex
+		justify-content: space-between
+		flex-wrap: nowrap
+		
+		//flex: 0 1 524px
+		flex: 0 1 48%
+		
+		position: relative
+		height: 266px
+		margin-bottom: 35px
+		overflow: hidden
+		background: $black
+		
+		&::before
+			content: ""
+			display: inline-block
+			position: absolute
+			right: 0
+			bottom: 0
+			width: 0
+			height: 0
+			border-style: solid
+			border-width: 420px 290px 0 0
+			border-color: transparent $yellowLight transparent transparent
+			z-index: 0
+			
+		&--yellow
+			background: $yellowLight
+			
+			&::before
+				border-color: transparent $black transparent transparent
+			
+			.article__title,
+			.article__text,
+			.article__btn
+				color: $black
+				
+			.article__icon
+				stroke: $black
+				
+			.article__btn:hover .article__icon
+				fill: $black
+			
+				
+	&__content
+		display: flex
+		flex-direction: column
+		justify-content: center
+		
+		//margin-left: 38px
+		margin-left: 7%
+		z-index: 1
+		
+	&__title
+		margin: 15px 0 20px 0
+		font-size: 25px
+		font-weight: 700
+		line-height: 35px
+		text-transform: uppercase
+		color: $white
+		
+	&__text
+		margin: 0
+		padding-right: 50px
+		font-size: 16px
+		font-weight: 300
+		line-height: 20px
+		letter-spacing: 0.1px
+		color: $white
+		
+	&__btn
+		display: inline-block
+		width: 80px
+		//padding: 20px 0 0 5px
+		padding: 7% 0 0 5px
+		font-size: 20px
+		font-weight: 700
+		text-decoration: none
+		color: $yellowDark
+	
+	&__icon
+		display: inline-block
+		position: relative
+		top: 2px
+		height: 16px
+		width: 12px
+		margin-left: 3px
+		stroke: $yellowDark
+		fill: none
+		stroke-width: 2px
+		transition: fill .5s linear
+	
+		.article__btn:hover &
+			fill: $yellowDark
+			
+	&__image
+		position: relative
+		right: -1px
+		z-index: 1
+		
+		@extend %img-responsive
+
+
+
+
+/*------------------ FOOTER -----------------*/
 
 
 @import "fonts"
