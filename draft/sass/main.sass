@@ -47,6 +47,8 @@ body
 /*------------------ MY STYLE -----------------
 	HEADER
 	SLIDER
+	ARTICLE
+	PRODUCT
 	FOOTER */
 
 .container
@@ -77,7 +79,7 @@ body
 	
 	&:hover
 		background-position: 0 0
-		color: $white
+		color: $black
 	
 	&__text
 		display: inline-block
@@ -89,16 +91,93 @@ body
 		
 	
 .wrap-head
+	position: relative
 	background: $blackLight
+	
+	&::before
+		content: ""
+		position: absolute
+		top: 0
+		left: 0
+		width: 0
+		height: 0
+		border-style: solid
+		border-width: 271px 271px 0 0
+		border-color: $orangeDark transparent transparent transparent
+		z-index: 0
+		
+		
+	&::after
+		content: ""
+		position: absolute
+		right: 0
+		top: 150px
+		width: 0
+		height: 0
+		border-style: solid
+		border-width: 510px 470px 510px 0
+		border-color: transparent $orangeDark transparent transparent
+		z-index: 1
+		
+.slider
+	&::before
+		content: ""
+		position: absolute
+		top: -115px
+		right: 0
+		width: 0
+		height: 0
+		border-style: solid
+		border-width: 220px 200px 220px 0
+		border-color: transparent $yellowDark transparent transparent
+		z-index: 0
+	
+	&::after
+		content: ""
+		position: absolute
+		top: 174px
+		left: 55px
+		width: 0
+		height: 0
+		border-style: solid
+		border-width: 76px 76px 0 0
+		border-color: $yellowDark transparent transparent transparent
+		z-index: 1
+
+.article
+	&::before
+		content: ""
+		position: absolute
+		left: 0
+		bottom: 430px
+		width: 0
+		height: 0
+		border-style: solid
+		border-width: 43px 0 43px 43px
+		border-color: transparent transparent transparent $yellowDark
+		z-index: 1
+	
+	&::after
+		content: ""
+		position: absolute
+		left: 0
+		bottom: 0
+		width: 0
+		height: 0
+		border-style: solid
+		border-width: 390px 0 24px 390px
+		border-color: transparent transparent transparent $orangeDark
+		z-index: 0
 
 /*------------------ HEADER -----------------*/
 
 .header
+	position: relative
 	width: 100%
 	padding-top: 15px
 	padding-bottom: 25px
 	border-bottom: 2px dashed $yellowDark
-	background: $blackLight
+	z-index: 1
 	
 	&__wrap
 		display: flex
@@ -166,6 +245,7 @@ body
 	
 	&__item
 		outline: none
+		z-index: 2
 		
 	&__wrap
 		display: flex
@@ -262,7 +342,7 @@ body
 
 /*------------------ ARTICLE -----------------*/
 .article
-	margin-top: 98px
+	margin-top: 63px
 	
 	&__wrap
 		display: flex
@@ -279,9 +359,10 @@ body
 		
 		position: relative
 		height: 266px
-		margin-bottom: 35px
+		margin-top: 35px
 		overflow: hidden
 		background: $black
+		z-index: 2
 		
 		&::before
 			content: ""
@@ -372,6 +453,24 @@ body
 		
 		@extend %img-responsive
 
+/*------------------ PRODUCT -----------------*/
+.product
+	position: relative
+	width: 100%
+	background: $blue
+	
+	&::before
+		content: ""
+		display: block
+		position: absolute
+		top: -190px
+		left: 0
+		width: 0
+		height: 0
+		border-style: solid
+		border-width: 0 0 190px 100vw
+		border-color: transparent transparent $blue transparent
+		z-index: 1
 
 
 
