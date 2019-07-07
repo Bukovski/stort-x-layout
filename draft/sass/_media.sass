@@ -9,7 +9,69 @@
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px)
-  /**/
+  .header
+    position: fixed
+    top: 0
+    height: 45px
+    padding: 0
+    background: $blackLight
+    z-index: 10
+
+  .header__logo-link
+    position: relative
+    top: 0
+    width: 100%
+    margin: 0
+    transform: translateX(calc(50% - 46px))
+    
+  .header__menu
+    display: none
+  
+  
+  .slider__wrap
+    margin: 0 15px
+  
+  .slider__content
+    flex-basis: auto
+    
+  .slider__image-wrap
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 50%
+    opacity: .5
+    z-index: 0
+    
+  .slider__image
+    height: 100%
+    width: auto
+    
+  .article__item
+    flex: 1 1 auto
+    margin: 5px 15px
+    
+  .wrap-head
+    &::before
+      border-width: get-vw(271px) get-vw(271px) 0 0
+    
+    &::after
+      top: get-vw(300px)
+      border-width: get-vw(510px) get-vw(470px) get-vw(510px) 0
+  
+  .slider
+    &::before
+      border-width: get-vw(220px) get-vw(200px) get-vw(220px) 0
+    
+    &::after
+      left: 0
+      border-width: get-vw(76px) get-vw(76px) 0 0
+  
+  .article
+    &::before
+      border-width: get-vw(43px) 0 get-vw(43px) get-vw(43px)
+    
+    &::after
+      border-width: get-vw(390px) 0 get-vw(24px) get-vw(390px)
 
 
 /* Small Devices, Tablets */
@@ -17,29 +79,62 @@
   
   /*Disable Animation on Mobile Devices*/
   .animated
-    /*CSS transitions*/
-    -o-transition-property: none !important
-    -moz-transition-property: none !important
-    -ms-transition-property: none !important
-    -webkit-transition-property: none !important
     transition-property: none !important
-    /*CSS transforms*/
-    -o-transform: none !important
-    -moz-transform: none !important
-    -ms-transform: none !important
-    -webkit-transform: none !important
     transform: none !important
-    /*CSS animations*/
-    -webkit-animation: none !important
-    -moz-animation: none !important
-    -o-animation: none !important
-    -ms-animation: none !important
     animation: none !important
+    
+  .slick-active
+    & .slider__image,
+    & .slider__title,
+    & .btn,
+    .btn__text
+      animation: none !important
+      
+  .slider
+    &::before
+      top: get-vw(-115px)
+      
+  .slider__image-wrap
+    left: 0
+    right: 0
+    
+  .slick-dots
+    margin-top: 5px
+    
+  .slider__title
+    margin-bottom: 5px
+    font-size: 45px
+    
+  .slider__text
+    margin-top: 5px
+    margin-bottom: 25px
+    
+  .article
+    margin-top: 15px
+    
+  .article__image
+    position: absolute
+    bottom: 0
+    z-index: 0
+    
+  .product::before
+    content: none
+      
 
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
-  /**/
+  .btn
+    padding: 8px 20px
+  
+  .article__content
+    width: 100%
+    
+  .article__item::before
+    content: none
+    
+  .article__image
+    opacity: .5
 
 
 /* Custom, iPhone Retina */

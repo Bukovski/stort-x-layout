@@ -50,6 +50,19 @@ body
 	ARTICLE
 	PRODUCT
 	FOOTER */
+	
+/*------ scroll webkit only ------*/
+::-webkit-scrollbar-track
+	background-color: #212121
+
+::-webkit-scrollbar-thumb
+	border-radius: 5px
+	background-color: $orangeDark
+
+::-webkit-scrollbar
+	width: 11px
+
+	
 
 .container
 	display: flex
@@ -89,7 +102,7 @@ body
 		border: 1px solid $yellowLight
 		color: $green
 		
-	
+/*---------- header background ---------*/
 .wrap-head
 	position: relative
 	background: $blackLight
@@ -103,7 +116,6 @@ body
 		height: 0
 		border-style: solid
 		border-width: 271px 271px 0 0
-		//border-width: get-vw(271px) get-vw(271px) 0 0
 		border-color: $orangeDark transparent transparent transparent
 		z-index: 0
 		
@@ -112,12 +124,10 @@ body
 		position: absolute
 		right: 0
 		top: 150px
-		//top: 11%
 		width: 0
 		height: 0
 		border-style: solid
 		border-width: 510px 470px 510px 0
-		//border-width: get-vw(510px) get-vw(470px) get-vw(510px) 0
 		border-color: transparent $orangeDark transparent transparent
 		z-index: 1
 		
@@ -126,13 +136,11 @@ body
 		content: ""
 		position: absolute
 		top: -115px
-		//top: get-vw(-115px)
 		right: 0
 		width: 0
 		height: 0
 		border-style: solid
 		border-width: 220px 200px 220px 0
-		//border-width: get-vw(220px) get-vw(200px) get-vw(220px) 0
 		border-color: transparent $yellowDark transparent transparent
 		z-index: 0
 	
@@ -246,7 +254,7 @@ body
 
 /*------------------ SLIDER -----------------*/
 .slider
-	margin-top: 82px
+	padding-top: 82px
 	margin-bottom: 30px
 	
 	&__init
@@ -258,10 +266,13 @@ body
 	&__wrap
 		display: flex
 		
+		position: relative
+		
 	&__content
 		flex: 0 1 443px
 		
 		padding-left: 3px
+		z-index: 1
 		
 	&__title
 		margin-bottom: 35px
