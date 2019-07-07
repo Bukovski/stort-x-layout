@@ -103,19 +103,21 @@ body
 		height: 0
 		border-style: solid
 		border-width: 271px 271px 0 0
+		//border-width: get-vw(271px) get-vw(271px) 0 0
 		border-color: $orangeDark transparent transparent transparent
 		z-index: 0
-		
 		
 	&::after
 		content: ""
 		position: absolute
 		right: 0
 		top: 150px
+		//top: 11%
 		width: 0
 		height: 0
 		border-style: solid
 		border-width: 510px 470px 510px 0
+		//border-width: get-vw(510px) get-vw(470px) get-vw(510px) 0
 		border-color: transparent $orangeDark transparent transparent
 		z-index: 1
 		
@@ -124,11 +126,13 @@ body
 		content: ""
 		position: absolute
 		top: -115px
+		//top: get-vw(-115px)
 		right: 0
 		width: 0
 		height: 0
 		border-style: solid
 		border-width: 220px 200px 220px 0
+		//border-width: get-vw(220px) get-vw(200px) get-vw(220px) 0
 		border-color: transparent $yellowDark transparent transparent
 		z-index: 0
 	
@@ -176,7 +180,8 @@ body
 	width: 100%
 	padding-top: 15px
 	padding-bottom: 25px
-	border-bottom: 2px dashed $yellowDark
+	//border-bottom: 2px dashed $yellowDark
+	background: linear-gradient(to right, transparent 80%, $yellowDark 0%) bottom/10px 2px repeat-x
 	z-index: 1
 	
 	&__wrap
@@ -186,6 +191,7 @@ body
 		justify-content: space-between
 	
 	&__logo-link
+		display: inline-block
 		margin-left: 48px
 		margin-right: 10px
 	
@@ -199,7 +205,7 @@ body
 		display: flex
 		justify-content: space-between
 		
-		width: 100%
+		max-width: 100%
 		margin: 0
 		margin-right: 10px
 		padding: 0
@@ -243,9 +249,11 @@ body
 	margin-top: 82px
 	margin-bottom: 30px
 	
+	&__init
+		z-index: 2
+		
 	&__item
 		outline: none
-		z-index: 2
 		
 	&__wrap
 		display: flex
@@ -264,6 +272,7 @@ body
 		line-height: 57px
 		letter-spacing: -3.15px
 		color: $white
+		transform: translate3d(0, 0, 0)
 	
 	&__text
 		margin-bottom: 45px
@@ -279,9 +288,6 @@ body
 		flex: 1 2 auto
 		
 	&__image
-		opacity: 0
-		transform: translate3d(100%, 0, 0)
-		
 		@extend %img-responsive
 		
 
@@ -400,6 +406,7 @@ body
 		flex-direction: column
 		justify-content: center
 		
+		width: 50%
 		//margin-left: 38px
 		margin-left: 7%
 		z-index: 1

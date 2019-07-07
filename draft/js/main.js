@@ -1,6 +1,6 @@
 window.onload = (function () {
   /*********************** my code ***********************/
-  $('.slider__js').slick({
+  $('.slider__init').slick({
     dots: true,
     arrows: false,
     
@@ -9,7 +9,7 @@ window.onload = (function () {
     slidesToScroll: 1,
     speed: 500,
   
-    // autoplay: true,
+    autoplay: true,
     autoplaySpeed: 3500
   });
 })();
