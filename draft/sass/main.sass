@@ -715,11 +715,89 @@ body
 		background-color: $blackLight
 		color: $yellowDark
 		
-
-
-
-
 /*------------------ FOOTER -----------------*/
+.footer
+	&-body
+		position: relative
+		padding-top: 30px
+		padding-bottom: 80px
+		background-color: $black
+		color: $white
+		
+		&::before
+			content: ""
+			display: block
+			position: absolute
+			top: -145px
+			left: 0
+			width: 0
+			height: 0
+			border-style: solid
+			border-width: 0 0 145px 100vw
+			border-color: transparent transparent $black transparent
+			z-index: 1
+		
+		&__wrap
+			display: flex
+			justify-content: space-between
+			
+		&__info
+			display: flex
+			flex-direction: column
+			
+			width: 325px
+			padding-top: 25px
+			
+		&__image-wrap
+		
+		&__image
+			@extend %img-responsive
+			
+		&__text
+			margin-top: 40px
+			line-height: 18px
+			font-size: 15px
+			font-weight: 400
+			
+		&__navigate
+		
+		&__title
+			font-size: 15px
+			font-weight: 700
+			
+		&__list
+			margin-top: 28px
+			padding: 0
+			list-style-type: none
+			
+		&__item
+			display: block
+			
+		&__link
+			display: inline-block
+			padding: 3px 0
+			font-weight: 400
+			white-space: nowrap
+			text-decoration: none
+			color: $grey
+	
+	
+	&-panel
+		background-color: $blackLight
+		
+		&__text
+			margin: 21px auto
+			font-size: 15px
+			font-weight: 400
+			color: $white
+			
+		&__colorful
+			text-decoration: none
+			color: $yellowDark
+			cursor: pointer
+
+
+
 
 
 @import "fonts"
