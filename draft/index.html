@@ -28,9 +28,18 @@
   
   <meta property="og:image" content="./image/favicon/android-chrome-192x192.png">
   
-  <style>body { opacity: 0; overflow-x: hidden; } html { background-color: #fff; }</style>
+  <style>#js-preloader{position:fixed;top:0;bottom:0;left:0;right:0;background:rgba(0,0,0,0.9);z-index:99999}.circle{position:absolute;top:50%;left:50%;width:100px;height:100px;margin:0 auto;margin-top:-50px;margin-left:-50px;text-align:center}.circle__first,.circle__middle,.circle__center{display:block;position:absolute;transform:translate(-50%,-50%);border:2px solid #ffae00;border-radius:50%;border-bottom-color:transparent!important}.circle__first{top:0;left:0;width:100%;height:100%;animation:preloader-effect 2s infinite linear}.circle__middle{top:12.5%;left:12.5%;width:75%;height:75%;border-color:#f8de01;animation:preloader-effect 1.5s infinite linear}.circle__center{top:25%;left:25%;width:50%;height:50%;border-color:#9cf801;animation:preloader-effect 1s infinite linear}@keyframes preloader-effect{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}</style>
 </head>
 <body>
+
+
+<div id="js-preloader">
+  <div class="circle">
+    <span class="circle__first"></span>
+    <span class="circle__middle"></span>
+    <span class="circle__center"></span>
+  </div>
+</div>
 
 
 <svg style="display: none;">
@@ -68,8 +77,21 @@
           <a class="header__button" href="#">BUY NOW</a>
         </nav>
         <!-- /.header__menu -->
+  
+        <!-- hamburger menu start -->
+        <div id="js-hamburger" class="hamburger hamburger--spin menu-btn">
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
+        </div>
+        <!-- hamburger menu finish -->
       </div>
       <!-- /.header__wrap -->
+      
+      <!--  mobile menu start -->
+      <div id="mobile-menu" class="pushy pushy-left"></div>
+      <div class="site-overlay"></div>
+      <!--  mobile menu finish -->
     </div>
     <!-- /.container -->
   </div>
@@ -335,8 +357,8 @@
       <form class="feedback__form">
         <div class="feedback__input-wrap">
           <input class="feedback__input" placeholder="Enter Your Email"
-               minlength="7" maxlength="40"
-               pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" required>
+                 minlength="7" maxlength="40"
+                 pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" required>
         </div>
         <!-- ./feedback__input-wrap-->
         <button class="feedback__btn">
@@ -359,6 +381,7 @@
             Magento provides different payment methods in order to allow you to accept payments using different payment processors like Pay...Magento provides different payment nts using different payment processors like Pay...
           </p>
         </div>
+        <div class="footer-body__grid">
         <!-- ./footer-body__info -->
         <div class="footer-body__navigate">
           <p class="footer-body__title">Support</p>
@@ -444,6 +467,8 @@
           </ul>
         </div>
         <!-- ./footer-body__navigate -->
+        </div>
+        <!-- ./footer__body__grid -->
       </div>
     </div>
   </div>
@@ -461,11 +486,10 @@
 
 
 
-
-<link rel="stylesheet" href="./css/main.css">
-<!--<link rel="stylesheet" href="./css/main.min.css">-->
-<script type="application/javascript" src="./js/libs.min.js"></script>
-<script type="application/javascript" src="./js/script.js"></script>
-<!--<script type="application/javascript" src="./js/script.min.js"></script>-->
+<!--<link rel="stylesheet" href="./css/main.css">-->
+<link rel="stylesheet" href="./css/main.min.css">
+<!--<script type="application/javascript" src="./js/libs.min.js"></script>-->
+<!--<script type="application/javascript" src="./js/script.js"></script>-->
+<script type="application/javascript" src="./js/script.min.js"></script>
 </body>
 </html>

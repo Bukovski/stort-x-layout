@@ -8,11 +8,11 @@ html, body
 	height: 100%
 
 body
-	font-size: 16px
-	min-width: 320px
 	position: relative
-	line-height: 1.75
+	min-width: 320px
+	font-size: 16px
 	font-family: $default-font
+	line-height: 1.75
 	overflow-x: hidden
 	opacity: 1
 	
@@ -22,7 +22,10 @@ body
 	ARTICLE
 	PRODUCT
 	INFO
-	FOOTER */
+	FEEDBACK
+	FOOTER
+	MOBILE MENU
+	*/
 	
 /*------ scroll webkit only ------*/
 ::-webkit-scrollbar-track
@@ -34,7 +37,6 @@ body
 
 ::-webkit-scrollbar
 	width: 11px
-
 	
 
 .container
@@ -43,8 +45,9 @@ body
 	
 	height: 100%
 	max-width: $innerGrid
-	width: 100%
+	//width: 100%
 	margin: 0 auto
+	padding: 0 5px
 	
 	
 .btn
@@ -55,6 +58,7 @@ body
 	border: 1px solid $black
 	text-decoration: none
 	text-align: center
+	background-color: $white
 	background-image: linear-gradient(to left,transparent,transparent 50%,$orangeDark 50%,$orangeDark)
 	background-position: -100% 0
 	background-size: 200% 100%
@@ -73,9 +77,11 @@ body
 	
 	&--yellow
 		border: 1px solid $yellowLight
+		background-color: $blackLight
 		color: $green
 		
 	&--white
+		background-color: $orangeDark
 		background-image: linear-gradient(to left,transparent,transparent 50%,$white 50%,$white)
 		
 /*---------- header background ---------*/
@@ -451,7 +457,7 @@ body
 	position: relative
 	width: 100%
 	padding-top: 114px
-	padding-bottom: 70px
+	padding-bottom: 62px
 	background: $blue
 	
 	&::before
@@ -482,7 +488,7 @@ body
 
 	&__header
 		padding: 0 7%
-		padding-bottom: 60px
+		padding-bottom: 53px
 		text-align: center
 		
 	&__title
@@ -498,11 +504,14 @@ body
 		
 	&__grid
 		display: flex
-		justify-content: space-between
+		//justify-content: space-between
+		justify-content: space-around
+		flex-wrap: wrap
 		
 	&__card
-		flex: 0 1 29%
+		flex: 0 1 325px
 		
+		margin: 7px 0
 		padding: 12px
 		padding-bottom: 8px
 		background-color: $white
@@ -512,7 +521,7 @@ body
 		justify-content: center
 		align-items: center
 		
-		width: 325px
+		width: 100%
 		height: 252px
 		padding: 15px
 		box-sizing: border-box
@@ -628,7 +637,7 @@ body
 	.info__image-wrap
 		right: auto
 		left: -90px
-		
+
 /*------------------ FEEDBACK -----------------*/
 .feedback
 	padding-top: 230px
@@ -659,7 +668,7 @@ body
 		align-items: center
 		flex: 0 1 53%
 		
-		margin-right: 20px
+		margin-right: 25px
 		
 	&__input
 		position: relative
@@ -765,7 +774,15 @@ body
 			font-size: 15px
 			font-weight: 400
 			
+		&__grid
+			display: flex
+			justify-content: space-evenly
+			flex-wrap: wrap
+			
+			width: 60%
+			
 		&__navigate
+			flex: 0 1 25%
 		
 		&__title
 			font-size: 15px
@@ -804,7 +821,58 @@ body
 			cursor: pointer
 
 
+/*-------------------- MOBILE MENU --------------------*/
+.hamburger
+	display: none
+	//display: inline-block
+	position: fixed
+	right: 10px
+	top: -5px
+	
+	-webkit-tap-highlight-color: rgba(0,0,0,0) /*Убрать для Android выделение при клике на гамбургер*/
+	-webkit-tap-highlight-color: transparent
 
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after
+	background-color: $white !important
+	user-select: none
+
+#mobile-menu,
+.site-overlay
+	display: none
+	//display: inline-block
+	z-index: 100500
+
+.pushy
+	&.pushy-left
+		background-color: $blackLight
+	
+	.header__menu
+		display: block
+		width: 100%
+		padding-right: 0
+		padding-left: 0
+		margin: 0
+		text-align: left
+
+	.header__list
+		flex-direction: column
+
+		margin: 0 auto !important
+
+	.header__item
+		display: inline-block
+		width: 100%
+		margin-left: 0
+		
+		& + li:before
+			content: none
+			
+	.header__link:hover,
+	.header__button:hover
+		color: $green
+		
 
 @import "fonts"
 @import "media"

@@ -1,5 +1,35 @@
 window.onload = (function () {
-  /*********************** my code ***********************/
+  /************** hamburger mobile menu ****************/
+    //hamburger toggle click
+  var $body = $('body'),
+    $hamburger = $("#js-hamburger");
+  
+  $hamburger.on("click", function () {
+    $(this).addClass("is-active")
+  });
+  
+  function closeHamburger () {
+    return $hamburger.removeClass("is-active");
+  }
+  
+  $(".site-overlay").on("click", function () {
+    closeHamburger();
+  });
+  
+  $(".header__menu").clone().appendTo("#mobile-menu"); //клонируем меню с шапки в мобильное меню
+  $("#mobile-menu").find("*").attr("style", ""); //очищаем от встроеных стилей
+  
+  //open close mobile menu if you click a link
+  $(".header__item, .header__button").on('click touchstart', function() {
+    if ($('.pushy').hasClass('pushy-left')) {
+      $body.removeClass('pushy-open-left');
+    }
+    
+    closeHamburger();
+  });
+  
+  /************** header slider ****************/
+  
   $('.slider__init').slick({
     dots: true,
     arrows: false,
@@ -12,4 +42,7 @@ window.onload = (function () {
     autoplay: true,
     autoplaySpeed: 3500
   });
+  
+  /*********************** hide preloader ***********************/
+  $("#js-preloader").fadeOut(500);
 })();

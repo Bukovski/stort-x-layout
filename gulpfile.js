@@ -46,7 +46,8 @@ const PATH = {
   ], //поддержка старыми браузерами
   scriptLibs: [
     PROJECT_FOLDERS.START + "_libs/jquery/dist/jquery.min.js",
-    PROJECT_FOLDERS.START + "_libs/slick-carousel/slick/slick.min.js"
+    PROJECT_FOLDERS.START + "_libs/slick-carousel/slick/slick.min.js",
+    PROJECT_FOLDERS.START + "_libs/pushy/js/pushy.min.js",
   ], //подключаем свои библиотеки
   scriptInput: [
     PROJECT_FOLDERS.START + "js/**/*.js"

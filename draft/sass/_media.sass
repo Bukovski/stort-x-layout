@@ -24,8 +24,13 @@
     margin: 0
     transform: translateX(calc(50% - 46px))
     
-  .header__menu
+  .header__wrap .header__menu
     display: none
+  
+  .hamburger,
+  #mobile-menu,
+  .site-overlay
+    display: inline-block
   
   
   .slider__wrap
@@ -72,17 +77,20 @@
     
     &::after
       border-width: get-vw(390px) 0 get-vw(24px) get-vw(390px)
+      
+  .info__image-wrap
+    position: absolute
+    top: 0
+    bottom: 0
 
+  .info--left .info__image-wrap
+    left: 0
+    
+  .footer-body__grid
+    width: 100%
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
-  
-  /*Disable Animation on Mobile Devices*/
-  .animated
-    transition-property: none !important
-    transform: none !important
-    animation: none !important
-    
   .slick-active
     & .slider__image,
     & .slider__title,
@@ -117,10 +125,59 @@
     bottom: 0
     z-index: 0
     
-  .product::before
+  .product::before,
+  .product::after,
+  .info::after,
+  .footer-body::before
     content: none
-      
-
+  
+  .product__title,
+  .info__title,
+  .feedback__title
+    font-size: 34px
+    line-height: 35px
+    
+  .product,
+  .info,
+  .feedback
+    padding-top: 15px
+    padding-bottom: 25px
+    
+  .product__header
+    padding-bottom: 10px
+    
+  .product__grid
+    flex-wrap: wrap
+    justify-content: space-around
+    
+  .info__image-wrap
+    position: absolute
+    top: 0
+    bottom: 0
+    opacity: .5
+   
+  .feedback__wrap
+    flex-wrap: wrap
+    
+  .feedback__title
+    flex: 1 1 100%
+    text-align: center
+    
+  .feedback__form
+    flex: 1 1 100%
+    margin-left: 20px
+    
+  .footer-body__wrap
+    flex-wrap: wrap
+    
+  .footer-body__info
+    width: 100%
+    text-align: center
+    
+  .footer-body__image-wrap
+    display: flex
+    justify-content: center
+    
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
@@ -135,7 +192,24 @@
     
   .article__image
     opacity: .5
-
+    
+  .product__card
+    flex: 1 1 100%
+    
+  .product__image-wrap
+    width: 100%
+    
+  .feedback__form
+    margin: 0 5px
+    
+  .feedback__input-wrap::before,
+  .feedback__btn,
+  .feedback .btn__text
+    transform: none
+    
+  .footer-body__navigate
+    flex-basis: 50%
+    
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px)
