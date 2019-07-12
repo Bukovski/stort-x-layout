@@ -517,9 +517,15 @@ body
 		padding: 15px
 		box-sizing: border-box
 		background-color: $blue
+		overflow: hidden
+		
+		&:hover .product__image
+			transform: scale(1.1)
 		
 	&__image
 		@extend %img-responsive
+		
+		transition: .5s
 		
 	&__info
 		display: flex
@@ -687,7 +693,7 @@ body
 			display: inline-block
 			position: relative
 			height: 44px
-			width: 100%
+			width: 75%
 			padding: 4px
 		
 			&::before
@@ -787,6 +793,7 @@ body
 		
 		&__text
 			margin: 21px auto
+			text-align: center
 			font-size: 15px
 			font-weight: 400
 			color: $white
@@ -795,7 +802,6 @@ body
 			text-decoration: none
 			color: $yellowDark
 			cursor: pointer
-
 
 
 
