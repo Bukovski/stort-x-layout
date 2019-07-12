@@ -78,6 +78,31 @@
     &::after
       border-width: get-vw(390px) 0 get-vw(24px) get-vw(390px)
       
+  .product,
+  .info,
+  .feedback
+    padding-top: 25px
+    padding-bottom: 25px
+    
+  .product::before
+    top: -90px
+    border-width: 0 0 90px 100vw
+    
+  .product::after
+    bottom: -90px
+    border-width: 0 100vw 90px 0
+    
+  .info::after
+    bottom: -90px
+    border-width: 90px 100vw 0 0
+    
+  .info--left::after
+    border-width: 0 100vw 90px 0
+    
+  .footer-body::before
+    top: -90px
+    border-width: 0 0 90px 100vw
+  
   .info__image-wrap
     position: absolute
     top: 0
@@ -88,6 +113,7 @@
     
   .footer-body__grid
     width: 100%
+    
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
@@ -141,7 +167,6 @@
   .info,
   .feedback
     padding-top: 15px
-    padding-bottom: 25px
     
   .product__header
     padding-bottom: 10px
@@ -151,9 +176,6 @@
     justify-content: space-around
     
   .info__image-wrap
-    position: absolute
-    top: 0
-    bottom: 0
     opacity: .5
    
   .feedback__wrap
@@ -166,6 +188,9 @@
   .feedback__form
     flex: 1 1 100%
     margin-left: 20px
+    
+  .footer-body
+    padding-bottom: 30px
     
   .footer-body__wrap
     flex-wrap: wrap
@@ -181,6 +206,15 @@
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
+  .slider
+    padding-top: 45px
+    
+  .slider__image-wrap
+    top: auto
+  
+  .slider__image
+    height: auto
+  
   .btn
     padding: 8px 20px
   
@@ -199,6 +233,11 @@
   .product__image-wrap
     width: 100%
     
+  .slider__content,
+  .info__content
+    flex: 1 1 auto
+    text-align: center
+    
   .feedback__form
     margin: 0 5px
     
@@ -213,5 +252,9 @@
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px)
-  /**/
+  .slider
+    padding-top: 25px
 
+  .slider__title
+    font-size: 35px
+    line-height: 40px

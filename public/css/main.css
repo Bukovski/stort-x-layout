@@ -1670,6 +1670,10 @@ body {
   bottom: -85px;
   z-index: 2;
 }
+.info__image {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 
 .info--left {
   padding-top: 200px;
@@ -2102,6 +2106,31 @@ body {
   .article::after {
     border-width: 42.3913vw 0 2.6087vw 42.3913vw;
   }
+  .product,
+  .info,
+  .feedback {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+  .product::before {
+    top: -90px;
+    border-width: 0 0 90px 100vw;
+  }
+  .product::after {
+    bottom: -90px;
+    border-width: 0 100vw 90px 0;
+  }
+  .info::after {
+    bottom: -90px;
+    border-width: 90px 100vw 0 0;
+  }
+  .info--left::after {
+    border-width: 0 100vw 90px 0;
+  }
+  .footer-body::before {
+    top: -90px;
+    border-width: 0 0 90px 100vw;
+  }
   .info__image-wrap {
     position: absolute;
     top: 0;
@@ -2167,7 +2196,6 @@ body {
   .info,
   .feedback {
     padding-top: 15px;
-    padding-bottom: 25px;
   }
   .product__header {
     padding-bottom: 10px;
@@ -2181,9 +2209,6 @@ body {
             justify-content: space-around;
   }
   .info__image-wrap {
-    position: absolute;
-    top: 0;
-    bottom: 0;
     opacity: .5;
   }
   .feedback__wrap {
@@ -2204,6 +2229,9 @@ body {
         -ms-flex: 1 1 100%;
             flex: 1 1 100%;
     margin-left: 20px;
+  }
+  .footer-body {
+    padding-bottom: 30px;
   }
   .footer-body__wrap {
     -webkit-flex-wrap: wrap;
@@ -2228,6 +2256,15 @@ body {
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width: 480px) {
+  .slider {
+    padding-top: 45px;
+  }
+  .slider__image-wrap {
+    top: auto;
+  }
+  .slider__image {
+    height: auto;
+  }
   .btn,
   .feedback__btn {
     padding: 8px 20px;
@@ -2250,6 +2287,14 @@ body {
   .product__image-wrap {
     width: 100%;
   }
+  .slider__content,
+  .info__content {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+    text-align: center;
+  }
   .feedback__form {
     margin: 0 5px;
   }
@@ -2269,5 +2314,11 @@ body {
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width: 320px) {
-  /**/
+  .slider {
+    padding-top: 25px;
+  }
+  .slider__title {
+    font-size: 35px;
+    line-height: 40px;
+  }
 }
