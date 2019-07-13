@@ -925,6 +925,7 @@ body {
 	FEEDBACK
 	FOOTER
 	MOBILE MENU
+	UP ARROW
 	*/
 /*------ scroll webkit only ------*/
 ::-webkit-scrollbar-track {
@@ -1991,6 +1992,35 @@ body {
   color: #9cf801;
 }
 
+/*------------------ UP ARROW ------------------*/
+.up-arrow {
+  display: none;
+  position: fixed;
+  right: 5%;
+  bottom: 5%;
+  width: 75px;
+  height: 75px;
+  cursor: pointer;
+  z-index: 20;
+}
+.up-arrow:hover .up-arrow__icon {
+  fill: #ffae00;
+}
+.up-arrow__icon {
+  display: inline-block;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  fill: #fcff00;
+  stroke: #000;
+  stroke-width: 30px;
+  -webkit-transition: .5s;
+  -o-transition: .5s;
+  transition: .5s;
+}
+
 @font-face {
   font-family: "museo";
   font-weight: 300;
@@ -2107,10 +2137,13 @@ body {
     border-width: 42.3913vw 0 2.6087vw 42.3913vw;
   }
   .product,
-  .info,
-  .feedback {
+  .info {
     padding-top: 25px;
     padding-bottom: 25px;
+  }
+  .feedback {
+    padding-top: 100px;
+    padding-bottom: 100px;
   }
   .product::before {
     top: -90px;
@@ -2196,6 +2229,9 @@ body {
   .info,
   .feedback {
     padding-top: 15px;
+  }
+  .feedback {
+    padding-bottom: 40px;
   }
   .product__header {
     padding-bottom: 10px;

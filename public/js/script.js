@@ -43,6 +43,23 @@ window.onload = (function () {
     autoplaySpeed: 3500
   });
   
+  /*********************** to top button ***********************/
+  
+  if( window.innerWidth > 992 ) { //show arrow only desc screen
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 500) {
+          $('#js-up').fadeIn();
+        } else {
+          $('#js-up').fadeOut();
+        }
+    });
+  }
+  
+  $('#js-up').click(function(){
+    $("html, body").animate({ scrollTop: 0 }, 1000);
+    return false;
+  });
+  
   /*********************** hide preloader ***********************/
   $("#js-preloader").fadeOut(500);
 })();

@@ -42,9 +42,13 @@
 </div>
 
 
-<svg style="display: none;">
+<svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
   <symbol id="arrow" viewBox="0 0 12 16">
     <path d="M.5.936l10.606 7.087-10.601 7.05z"/>
+  </symbol>
+  
+  <symbol id="up-arrow" viewBox="0 0 1000 1000">
+    <path d="M500,260.9L10,739.1h980L500,260.9z"/>
   </symbol>
 </svg>
 
@@ -485,6 +489,12 @@
 </footer>
 
 
+<div id="js-up" class="up-arrow">
+  <svg class="up-arrow__icon">
+    <use xlink:href="#up-arrow"></use>
+  </svg>
+</div>
+<!-- ./up button -->
 
 <!--<link rel="stylesheet" href="./css/main.css">-->
 <link rel="stylesheet" href="./css/main.min.css">
